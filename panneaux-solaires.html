@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panneaux Solaires — Innovea Group</title>
+  <meta name="description" content="Panneaux solaires monocristallins haute performance. Rendement jusqu'à 23%, garantie 25 ans. Solutions pour tous vos besoins.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .panel-hero-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .tech-visual {
+      height: 400px;
+      background: linear-gradient(135deg, #0B1D3A, #1A3A6B);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .tech-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 60% 40%, rgba(0,200,150,0.2) 0%, transparent 70%);
+    }
+    .efficiency-bar {
+      background: var(--bg-light);
+      border-radius: var(--radius-full);
+      height: 8px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .efficiency-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--accent-green), #00FFD0);
+    }
+    .application-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .app-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    .app-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .app-icon { font-size: 48px; margin-bottom: 16px; }
+    .app-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .app-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: white; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.08); overflow: hidden; }
+    .faq-toggle { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; font-size: 16px; font-weight: 600; color: var(--text-primary); cursor: pointer; width: 100%; text-align: left; background: none; border: none; font-family: var(--font); }
+    .faq-arrow { transition: var(--transition); font-size: 12px; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-body { max-height: 200px; }
+    .faq-text { padding: 0 24px 20px; font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Accueil</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link">À Propos</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="sep">›</span>
+        <span class="current">Panneaux Solaires</span>
+      </div>
+      <div class="hero-badge" style="margin-bottom:20px;">
+        <span class="badge-dot"></span>
+        Technologie Monocristalline Premium
+      </div>
+      <h1 class="page-hero-title">Panneaux Solaires<br><span class="text-gradient-green">Haute Performance</span></h1>
+      <p class="page-hero-subtitle">Maximisez votre production d'énergie avec nos panneaux solaires de classe A, conçus pour les conditions climatiques africaines et certifiés selon les standards internationaux les plus exigeants.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis →</a>
+        <a href="#gamme" class="btn btn-outline btn-lg">Voir la gamme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY NUMBERS -->
+<section class="section section-dark" style="padding:60px 0;">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-item">
+        <div class="stat-number"><span>23</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">Rendement max</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>25</span><span class="stat-unit">ans</span></div>
+        <div class="stat-label">Garantie production</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>600</span><span class="stat-unit">W</span></div>
+        <div class="stat-label">Puissance maximale</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>IP68</span></div>
+        <div class="stat-label">Protection boîte jonction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="section">
+  <div class="container">
+    <div class="tech-grid">
+      <div class="slide-left">
+        <div class="section-label">Technologie</div>
+        <h2 class="section-title">Pourquoi le monocristallin ?</h2>
+        <p class="section-subtitle" style="margin-bottom:32px;">Nos panneaux utilisent des cellules monocristallines PERC de dernière génération, offrant le meilleur rendement disponible sur le marché.</p>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-weight:600;font-size:14px;">Rendement énergétique</span>
+              <span style="color:var(--accent-green);font-weight:700;">23%</span>
+            </div>
+            <div class="efficiency-bar"><div class="efficiency-fill" style="width:92%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-weight:600;font-size:14px;">Résistance thermique</span>
+              <span style="color:var(--accent-green);font-weight:700;">Excellent</span>
+            </div>
+            <div class="efficiency-bar"><div class="efficiency-fill" style="width:88%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-weight:600;font-size:14px;">Performance en faible luminosité</span>
+              <span style="color:var(--accent-green);font-weight:700;">95%</span>
+            </div>
+            <div class="efficiency-bar"><div class="efficiency-fill" style="width:95%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+              <span style="font-weight:600;font-size:14px;">Durabilité & longévité</span>
+              <span style="color:var(--accent-green);font-weight:700;">25+ ans</span>
+            </div>
+            <div class="efficiency-bar"><div class="efficiency-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual slide-right">
+        <span style="position:relative;z-index:1;">☀️</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT RANGE -->
+<section class="section section-light" id="gamme">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Notre Gamme</div>
+      <h2 class="section-title">Panneaux adaptés à chaque besoin</h2>
+      <p class="section-subtitle">De 400W à 600W, nos panneaux sont conçus pour maximiser votre production quelle que soit la surface disponible.</p>
+    </div>
+    <div class="grid-3 stagger">
+      <div class="product-card">
+        <div class="product-card-image bg-dark-blue">🌞</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Essentiel</div>
+          <h3 class="product-card-title">Innovea Solar 400W</h3>
+          <p class="product-card-description">Panneau monocristallin idéal pour les petites installations résidentielles. Excellent rapport qualité-prix.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 400W</span>
+            <span class="spec-tag">📐 1722×1134mm</span>
+            <span class="spec-tag">⚖️ 21kg</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Rendement</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">20.5%</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" style="border:2px solid var(--accent-green);position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gold);color:white;font-size:11px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap;">⭐ BEST SELLER</div>
+        <div class="product-card-image bg-teal">☀️</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Performance</div>
+          <h3 class="product-card-title">Innovea Solar 500W</h3>
+          <p class="product-card-description">Notre best-seller. Parfait pour les installations résidentielles moyennes. Technologie PERC avancée.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 500W</span>
+            <span class="spec-tag">📐 2094×1134mm</span>
+            <span class="spec-tag">⚖️ 25kg</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Rendement</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">21.8%</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image bg-indigo">🔆</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Premium</div>
+          <h3 class="product-card-title">Innovea Solar 600W</h3>
+          <p class="product-card-description">Notre flagship. Technologie TOPCon N-type. Idéal pour les grandes installations et le commercial.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 600W</span>
+            <span class="spec-tag">📐 2278×1134mm</span>
+            <span class="spec-tag">⚖️ 27kg</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Rendement</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">23.0%</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS TABLE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Spécifications Techniques</div>
+      <h2 class="section-title">Comparatif de notre gamme</h2>
+    </div>
+    <div class="fade-up" style="overflow-x:auto;">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Caractéristique</th>
+            <th>Solar 400W</th>
+            <th>Solar 500W</th>
+            <th>Solar 600W</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Puissance nominale (STC)</td><td>400 Wc</td><td>500 Wc</td><td class="highlight">600 Wc</td></tr>
+          <tr><td>Rendement du module</td><td>20.5%</td><td>21.8%</td><td class="highlight">23.0%</td></tr>
+          <tr><td>Tension en circuit ouvert (Voc)</td><td>37.8V</td><td>43.2V</td><td class="highlight">50.6V</td></tr>
+          <tr><td>Courant de court-circuit (Isc)</td><td>13.9A</td><td>15.2A</td><td class="highlight">15.8A</td></tr>
+          <tr><td>Tolérance de puissance</td><td>0 / +5W</td><td>0 / +5W</td><td class="highlight">0 / +5W</td></tr>
+          <tr><td>Coefficient de température Pmax</td><td>-0.35%/°C</td><td>-0.34%/°C</td><td class="highlight">-0.30%/°C</td></tr>
+          <tr><td>Garantie produit</td><td>12 ans</td><td>15 ans</td><td class="highlight">25 ans</td></tr>
+          <tr><td>Garantie performance linéaire</td><td>25 ans</td><td>25 ans</td><td class="highlight">30 ans</td></tr>
+          <tr><td>Charge de neige / vent</td><td>5400 Pa</td><td>5400 Pa</td><td class="highlight">8100 Pa</td></tr>
+          <tr><td>Certification</td><td>IEC 61215</td><td>IEC 61215 / MCS</td><td class="highlight">IEC 61215 / MCS / UL</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Applications</div>
+      <h2 class="section-title">Des solutions pour chaque contexte</h2>
+    </div>
+    <div class="application-grid stagger">
+      <div class="app-card">
+        <div class="app-icon">🏠</div>
+        <div class="app-title">Résidentiel</div>
+        <p class="app-text">Villas, appartements, maisons individuelles. Réduisez vos factures électriques de 60 à 90%.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🏢</div>
+        <div class="app-title">Commercial</div>
+        <p class="app-text">Bureaux, commerces, hôtels. Optimisez vos coûts opérationnels avec une installation sur mesure.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🏭</div>
+        <div class="app-title">Industriel</div>
+        <p class="app-text">Usines, entrepôts, zones industrielles. Solutions MW pour une production massive d'énergie.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🌾</div>
+        <div class="app-title">Agricole</div>
+        <p class="app-text">Pompage solaire, séchage agricole, serres connectées. L'énergie solaire au service de l'agriculture.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🏫</div>
+        <div class="app-title">Éducation & Santé</div>
+        <p class="app-text">Écoles, centres de santé, dispensaires. L'énergie fiable pour les services essentiels.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🔌</div>
+        <div class="app-title">Hors Réseau</div>
+        <p class="app-text">Zones rurales, sites isolés. Solutions autonomes avec stockage batterie intégré.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;">
+      <div class="section-header centered fade-up">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Questions fréquentes</h2>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-toggle">Quelle puissance de panneau choisir pour ma maison ? <span class="faq-arrow">▼</span></button>
+          <div class="faq-body"><p class="faq-text">La puissance dépend de votre consommation mensuelle. En moyenne, une maison consommant 300-500 kWh/mois aura besoin de 3 à 6 kWc (soit 6 à 12 panneaux de 500W). Nos experts réalisent une étude gratuite pour vous conseiller précisément.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-toggle">Les panneaux fonctionnent-ils par temps nuageux ? <span class="faq-arrow">▼</span></button>
+          <div class="faq-body"><p class="faq-text">Oui ! Nos panneaux monocristallins sont optimisés pour la performance en faible luminosité. Ils produisent de l'énergie même par temps nuageux, atteignant 15 à 30% de leur production maximale selon le niveau de nébulosité.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-toggle">Quelle est la durée de vie d'un panneau solaire Innovea ? <span class="faq-arrow">▼</span></button>
+          <div class="faq-body"><p class="faq-text">Nos panneaux sont garantis 25 ans de performance avec une dégradation maximum de 0.5% par an. Après 25 ans, ils produisent encore plus de 87% de leur puissance initiale. La durée de vie réelle dépasse souvent 30 à 35 ans.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-toggle">Faut-il un permis pour installer des panneaux solaires ? <span class="faq-arrow">▼</span></button>
+          <div class="faq-body"><p class="faq-text">Les réglementations varient selon les pays et communes. Notre équipe gère toutes les démarches administratives pour vous, y compris les autorisations et déclarations nécessaires. Cela fait partie de notre service clé en main.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-toggle">Comment entretenir mes panneaux solaires ? <span class="faq-arrow">▼</span></button>
+          <div class="faq-body"><p class="faq-text">Les panneaux nécessitent peu d'entretien. Un nettoyage 2 à 3 fois par an suffit dans la plupart des cas. Nous proposons des contrats de maintenance annuelle qui incluent le nettoyage, l'inspection et la vérification des performances.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <h2 class="cta-title">Calculez votre économie solaire</h2>
+      <p class="cta-subtitle">Obtenez une étude personnalisée gratuite et découvrez le retour sur investissement de vos panneaux solaires.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Étude gratuite →</a>
+        <a href="kits-residentiels.html" class="btn btn-outline btn-lg">Voir les kits</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div>
+            <div class="footer-logo-name">Innovea Group</div>
+            <div class="footer-logo-sub">Énergie Renouvelable</div>
+          </div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables, innovantes et rentables depuis 2012.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batteries de Stockage — Innovea Group</title>
+  <meta name="description" content="Batteries LiFePO4 haute capacité pour stocker votre énergie solaire. Autonomie totale, 10 000 cycles de vie garantis.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .battery-visual {
+      background: linear-gradient(135deg, #0F3D3E, #0D5E60);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .battery-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(0,200,150,0.2), transparent 70%);
+    }
+    .battery-icon { font-size: 100px; position: relative; z-index: 1; }
+    .battery-level {
+      width: 120px;
+      height: 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      margin: 24px auto 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .battery-level-fill {
+      height: 100%;
+      width: 94%;
+      background: linear-gradient(90deg, var(--accent-green), #00FFD0);
+      border-radius: 6px;
+      animation: charge 3s ease-in-out infinite alternate;
+    }
+    @keyframes charge {
+      0% { width: 40%; }
+      100% { width: 94%; }
+    }
+    .compat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .compat-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .compat-card:hover { border-color: var(--accent-green); box-shadow: var(--shadow-md); }
+    .compat-icon { font-size: 36px; margin-bottom: 12px; }
+    .compat-name { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .compat-desc { font-size: 13px; color: var(--text-muted); }
+    .advantage-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .advantage-list { display: flex; flex-direction: column; gap: 20px; }
+    .advantage-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    .advantage-item:hover { border-color: var(--accent-green); box-shadow: var(--shadow-sm); }
+    .adv-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent-green-light); color: var(--accent-green-dark);
+      font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .adv-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .adv-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link">À Propos</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="sep">›</span>
+        <span class="current">Batteries de Stockage</span>
+      </div>
+      <div class="hero-badge" style="margin-bottom:20px;">
+        <span class="badge-dot"></span>
+        Technologie LiFePO4 — Longue durée
+      </div>
+      <h1 class="page-hero-title">Batteries de Stockage<br><span class="text-gradient-green">Intelligentes</span></h1>
+      <p class="page-hero-subtitle">Stockez votre énergie solaire et soyez autonome 24h/24. Nos batteries LiFePO4 de nouvelle génération offrent 10 000 cycles de vie pour une autonomie totale et durable.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis →</a>
+        <a href="#gamme-batteries" class="btn btn-outline btn-lg">Voir la gamme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-dark" style="padding:60px 0;">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-item">
+        <div class="stat-number"><span>10</span><span class="stat-unit">000</span></div>
+        <div class="stat-label">Cycles de vie garantis</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>95</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">Profondeur de décharge</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>10</span><span class="stat-unit">ans</span></div>
+        <div class="stat-label">Garantie fabricant</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>-20</span><span class="stat-unit">+60°C</span></div>
+        <div class="stat-label">Plage de température</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LIFEPO4 -->
+<section class="section">
+  <div class="container">
+    <div class="advantage-row">
+      <div class="slide-left">
+        <div class="section-label">Technologie LiFePO4</div>
+        <h2 class="section-title">La batterie la plus sûre et la plus durable</h2>
+        <p class="section-subtitle" style="margin-bottom:32px;">Le Lithium Fer Phosphate est la chimie la plus avancée pour le stockage résidentiel et commercial. Voici pourquoi c'est notre choix.</p>
+        <a href="contact.html" class="btn btn-primary">Consulter un expert →</a>
+      </div>
+      <div class="advantage-list slide-right">
+        <div class="advantage-item">
+          <div class="adv-num">1</div>
+          <div>
+            <div class="adv-title">Sécurité maximale</div>
+            <p class="adv-text">Structure chimique stable. Aucun risque d'emballement thermique, pas de risque d'incendie ou d'explosion contrairement aux batteries Li-Ion classiques.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="adv-num">2</div>
+          <div>
+            <div class="adv-title">Longévité exceptionnelle</div>
+            <p class="adv-text">10 000 cycles de charge/décharge garantis, contre 500-2000 pour les batteries plomb-acide. Durée de vie de 15 à 20 ans minimum.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="adv-num">3</div>
+          <div>
+            <div class="adv-title">Performance thermique</div>
+            <p class="adv-text">Maintient 95% de sa capacité jusqu'à 45°C, idéal pour les climats chauds africains. Fonctionne de -20°C à +60°C.</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="adv-num">4</div>
+          <div>
+            <div class="adv-title">Charge rapide</div>
+            <p class="adv-text">Accepte des charges à 1C en standard, jusqu'à 2C en option. Une batterie complètement vide peut être rechargée en 1 à 2 heures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT RANGE -->
+<section class="section section-light" id="gamme-batteries">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Notre Gamme</div>
+      <h2 class="section-title">Batteries pour chaque application</h2>
+      <p class="section-subtitle">De 5 kWh à 100 kWh modulaires, nos systèmes s'adaptent à tous vos besoins.</p>
+    </div>
+    <div class="grid-3 stagger">
+      <div class="product-card">
+        <div class="product-card-image bg-teal">🔋</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Résidentielle</div>
+          <h3 class="product-card-title">InnoStore 5 kWh</h3>
+          <p class="product-card-description">Parfait pour les petites maisons. Couvre 6 à 8 heures d'autonomie pour un foyer moyen de 4 personnes.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 5 kWh</span>
+            <span class="spec-tag">🔌 48V</span>
+            <span class="spec-tag">📦 Mural</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Cycles garantis</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">6 000+</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" style="border:2px solid var(--accent-green);position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gold);color:white;font-size:11px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap;">⭐ RECOMMANDÉ</div>
+        <div class="product-card-image bg-dark-blue">🔌</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Confort</div>
+          <h3 class="product-card-title">InnoStore 10 kWh</h3>
+          <p class="product-card-description">Notre solution la plus populaire. Autonomie complète pour la nuit, adaptée aux maisons de taille moyenne à grande.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 10 kWh</span>
+            <span class="spec-tag">🔌 48V</span>
+            <span class="spec-tag">📦 Sol/Mur</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Cycles garantis</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">10 000+</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image bg-charcoal">⚡</div>
+        <div class="product-card-body">
+          <div class="product-card-label">Gamme Premium</div>
+          <h3 class="product-card-title">InnoStore 20 kWh</h3>
+          <p class="product-card-description">Solution haut de gamme pour grandes villas et PME. Modulaire jusqu'à 100 kWh pour les besoins commerciaux.</p>
+          <div class="product-card-specs">
+            <span class="spec-tag">⚡ 20 kWh</span>
+            <span class="spec-tag">🔌 48V/96V</span>
+            <span class="spec-tag">📦 Modulaire</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);">Cycles garantis</div>
+              <div style="font-size:20px;font-weight:800;color:var(--accent-green);">10 000+</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Devis →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Spécifications</div>
+      <h2 class="section-title">Fiches techniques détaillées</h2>
+    </div>
+    <div class="fade-up" style="overflow-x:auto;">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Caractéristique</th>
+            <th>InnoStore 5 kWh</th>
+            <th>InnoStore 10 kWh</th>
+            <th>InnoStore 20 kWh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Capacité nominale</td><td>5.12 kWh</td><td>10.24 kWh</td><td class="highlight">20.48 kWh</td></tr>
+          <tr><td>Chimie des cellules</td><td>LiFePO4</td><td>LiFePO4</td><td class="highlight">LiFePO4</td></tr>
+          <tr><td>Tension nominale</td><td>51.2V</td><td>51.2V</td><td class="highlight">51.2V (extensible 96V)</td></tr>
+          <tr><td>Profondeur de décharge (DoD)</td><td>90%</td><td>95%</td><td class="highlight">95%</td></tr>
+          <tr><td>Rendement aller-retour</td><td>95%</td><td>97%</td><td class="highlight">97%</td></tr>
+          <tr><td>Courant de charge max</td><td>50A</td><td>100A</td><td class="highlight">200A</td></tr>
+          <tr><td>Cycles de vie (80% DoD)</td><td>6 000</td><td>10 000</td><td class="highlight">10 000+</td></tr>
+          <tr><td>Température de fonctionnement</td><td>-10 à 50°C</td><td>-20 à 55°C</td><td class="highlight">-20 à 60°C</td></tr>
+          <tr><td>Poids</td><td>52 kg</td><td>96 kg</td><td class="highlight">185 kg</td></tr>
+          <tr><td>Garantie</td><td>7 ans</td><td>10 ans</td><td class="highlight">10 ans</td></tr>
+          <tr><td>Protection</td><td>IP55</td><td>IP65</td><td class="highlight">IP65</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- COMPATIBILITY -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Compatibilité</div>
+      <h2 class="section-title">Compatible avec tous vos équipements</h2>
+      <p class="section-subtitle">Nos batteries s'intègrent parfaitement avec les onduleurs et systèmes solaires des marques leaders.</p>
+    </div>
+    <div class="compat-grid stagger">
+      <div class="compat-card">
+        <div class="compat-icon">⚡</div>
+        <div class="compat-name">Onduleurs Hybrides</div>
+        <p class="compat-desc">Compatible avec tous les onduleurs hybrides : Growatt, SolarEdge, Huawei, Fronius et plus.</p>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon">☀️</div>
+        <div class="compat-name">Panneaux Solaires</div>
+        <p class="compat-desc">S'intègre avec n'importe quelle installation solaire existante ou nouvelle.</p>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon">📱</div>
+        <div class="compat-name">Application Mobile</div>
+        <p class="compat-desc">Monitoring en temps réel via notre application iOS et Android. Alertes intelligentes.</p>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon">🏠</div>
+        <div class="compat-name">Domotique</div>
+        <p class="compat-desc">Intégration avec les systèmes domotiques : Home Assistant, KNX, protocole Modbus.</p>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon">🔌</div>
+        <div class="compat-name">Réseau Électrique</div>
+        <p class="compat-desc">Fonctionne en mode on-grid, off-grid ou hybride selon vos besoins.</p>
+      </div>
+      <div class="compat-card">
+        <div class="compat-icon">🔧</div>
+        <div class="compat-name">Extension Modulaire</div>
+        <p class="compat-desc">Ajoutez des modules au fil du temps pour augmenter votre capacité de stockage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <h2 class="cta-title">Passez à l'autonomie énergétique totale</h2>
+      <p class="cta-subtitle">Combinez nos panneaux solaires et nos batteries pour une indépendance énergétique complète.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Devis personnalisé →</a>
+        <a href="kits-residentiels.html" class="btn btn-outline btn-lg">Voir les kits complets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div><div class="footer-logo-name">Innovea Group</div><div class="footer-logo-sub">Énergie Renouvelable</div></div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables depuis 2012.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kits Professionnels — Innovea Group</title>
+  <meta name="description" content="Solutions solaires pour entreprises, industries et institutions. ROI prouvé, économies massives d'énergie.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .sector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .sector-card {
+      background: white; border-radius: var(--radius-lg); padding: 28px;
+      border: 1px solid rgba(0,0,0,0.07); transition: var(--transition); text-align: center;
+    }
+    .sector-card:hover { border-color: var(--accent-green); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .sector-icon { font-size: 44px; margin-bottom: 14px; }
+    .sector-name { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .sector-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .case-study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .case-study-card {
+      background: white; border-radius: var(--radius-xl); padding: 36px;
+      box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+    }
+    .case-study-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+    .cs-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-green); margin-bottom: 12px; }
+    .cs-title { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; }
+    .cs-description { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; }
+    .cs-stats { display: flex; gap: 24px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
+    .cs-stat-number { font-size: 26px; font-weight: 900; color: var(--accent-green); }
+    .cs-stat-label { font-size: 12px; color: var(--text-muted); }
+    .pro-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .advantage-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      padding: 48px; background: var(--primary); border-radius: var(--radius-xl);
+    }
+    .adv-strip-item { text-align: center; }
+    .adv-strip-icon { font-size: 40px; margin-bottom: 12px; }
+    .adv-strip-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .adv-strip-text { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .sector-grid, .case-study-grid, .pro-pricing-grid { grid-template-columns: 1fr; }
+      .advantage-strip { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link">À Propos</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a><span class="sep">›</span><span class="current">Kits Professionnels</span>
+      </div>
+      <div class="hero-badge" style="margin-bottom:20px;">
+        <span class="badge-dot"></span>
+        Solutions Enterprise & Industrielles
+      </div>
+      <h1 class="page-hero-title">Kits Solaires<br><span class="text-gradient-green">Professionnels</span></h1>
+      <p class="page-hero-subtitle">Réduisez massivement vos coûts énergétiques et améliorez votre compétitivité. Nos solutions d'entreprise sont conçues pour des installations de 20 kWc à plusieurs mégawatts.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Audit énergétique gratuit →</a>
+        <a href="#solutions-pro" class="btn btn-outline btn-lg">Nos solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY STATS -->
+<section class="section section-dark" style="padding:60px 0;">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-item">
+        <div class="stat-number"><span>60</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">Réduction coûts énergie</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>3-4</span><span class="stat-unit">ans</span></div>
+        <div class="stat-label">Retour sur investissement</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>5</span><span class="stat-unit">MW</span></div>
+        <div class="stat-label">Puissance max installée</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span>120</span><span class="stat-unit">+</span></div>
+        <div class="stat-label">Entreprises clientes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Secteurs d'activité</div>
+      <h2 class="section-title">Nous intervenons dans tous les secteurs</h2>
+      <p class="section-subtitle">Quelle que soit votre activité, nous avons la solution énergétique adaptée à vos contraintes et objectifs.</p>
+    </div>
+    <div class="sector-grid stagger">
+      <div class="sector-card">
+        <div class="sector-icon">🏭</div>
+        <div class="sector-name">Industrie & Manufacture</div>
+        <p class="sector-desc">Usines, ateliers, zones industrielles. Solutions MW avec stockage massif et gestion intelligente de la demande.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏨</div>
+        <div class="sector-name">Hôtellerie & Tourisme</div>
+        <p class="sector-desc">Hôtels, lodges, resorts. Énergie fiable 24h/24 pour améliorer l'expérience client et réduire les coûts.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🛒</div>
+        <div class="sector-name">Commerce & Distribution</div>
+        <p class="sector-desc">Supermarchés, centres commerciaux. Climatisation, éclairage et réfrigération alimentés par l'énergie solaire.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏥</div>
+        <div class="sector-name">Santé & Pharmaceutique</div>
+        <p class="sector-desc">Hôpitaux, cliniques, pharmacies. Énergie ininterrompue critique pour la chaîne du froid et les équipements médicaux.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🌾</div>
+        <div class="sector-name">Agriculture & Agro-industrie</div>
+        <p class="sector-desc">Pompage solaire, séchage, transformation. Réduisez les coûts agricoles et améliorez la productivité.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏫</div>
+        <div class="sector-name">Éducation & Institutions</div>
+        <p class="sector-desc">Universités, écoles, mairies. Solutions durables pour réduire les budgets énergétiques publics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS PRO -->
+<section class="section section-light" id="solutions-pro">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Nos Solutions</div>
+      <h2 class="section-title">3 niveaux de solutions professionnelles</h2>
+      <p class="section-subtitle">Des installations modulaires et évolutives, du site de 20 kWc au parc solaire multi-mégawatts.</p>
+    </div>
+    <div class="pro-pricing-grid fade-up">
+      <div class="pricing-card">
+        <div class="pricing-name">PME & Commerces</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">20 kWc — 100 kWc</div>
+        <div class="pricing-price-amount" style="font-size:32px;color:var(--text-primary);">Sur devis</div>
+        <div class="pricing-period">Étude gratuite incluse</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Audit énergétique complet</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Conception sur mesure</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Panneaux 500-600W classe A</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs string ou micro</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Stockage en option</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Monitoring SCADA</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Installation & raccordement</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Garantie 10 ans</div>
+        </div>
+        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Demander un audit →</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Solutions les plus demandées</div>
+        <div class="pricing-name">ETI & Industries</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">100 kWc — 1 MWc</div>
+        <div class="pricing-price-amount" style="font-size:32px;color:white;">Sur devis</div>
+        <div class="pricing-period">ROI garanti en contrat</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Étude de faisabilité détaillée</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Ingénierie EPC complète</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Panneaux bifaciaux 600W+</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs centraux Huawei/SMA</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Stockage BESS intégré</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>SCADA & monitoring avancé</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Gestion de projet dédiée</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Maintenance O&M 3 ans</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Rapport performance mensuel</div>
+        </div>
+        <a href="contact.html" class="btn btn-gold w-full btn-lg" style="justify-content:center;">Demander un audit →</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-name">Grands Comptes & Parcs</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">1 MWc — 10 MWc+</div>
+        <div class="pricing-price-amount" style="font-size:32px;color:var(--text-primary);">Sur devis</div>
+        <div class="pricing-period">Financement bancaire disponible</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Étude de marché & business plan</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Conception EPC complète</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Modules bifaciaux & trackers</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs centraux</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>BESS grande capacité</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Raccordement réseau HTA</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Équipe dédiée sur site</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Contrat O&M 5 ans</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Assurance performance</div>
+        </div>
+        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Contacter nos experts →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES STRIP -->
+<section class="section">
+  <div class="container">
+    <div class="advantage-strip fade-up">
+      <div class="adv-strip-item">
+        <div class="adv-strip-icon">🎯</div>
+        <div class="adv-strip-title">Audit gratuit</div>
+        <p class="adv-strip-text">Étude de faisabilité et simulation de ROI sans engagement</p>
+      </div>
+      <div class="adv-strip-item">
+        <div class="adv-strip-icon">⚙️</div>
+        <div class="adv-strip-title">Clé en main EPC</div>
+        <p class="adv-strip-text">Engineering, Procurement & Construction. On gère tout.</p>
+      </div>
+      <div class="adv-strip-item">
+        <div class="adv-strip-icon">📊</div>
+        <div class="adv-strip-title">ROI garanti</div>
+        <p class="adv-strip-text">Contrats de performance avec garanties sur la production</p>
+      </div>
+      <div class="adv-strip-item">
+        <div class="adv-strip-icon">🛡️</div>
+        <div class="adv-strip-title">O&M longue durée</div>
+        <p class="adv-strip-text">Contrats de maintenance pluriannuels pour une performance optimale</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Réalisations</div>
+      <h2 class="section-title">Projets emblématiques</h2>
+    </div>
+    <div class="case-study-grid stagger">
+      <div class="case-study-card">
+        <div class="cs-label">Industrie · 2023</div>
+        <h3 class="cs-title">Usine Textile Konaté Industries</h3>
+        <p class="cs-description">Installation d'une centrale solaire de 500 kWc avec stockage BESS 400 kWh sur le toit de l'usine. Le projet a permis de réduire les coûts énergétiques de 65% et d'éliminer complètement les coupures de production.</p>
+        <div class="cs-stats">
+          <div>
+            <div class="cs-stat-number">65%</div>
+            <div class="cs-stat-label">Réduction coûts</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">500 kWc</div>
+            <div class="cs-stat-label">Puissance installée</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">3.5 ans</div>
+            <div class="cs-stat-label">ROI estimé</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-study-card">
+        <div class="cs-label">Hôtellerie · 2023</div>
+        <h3 class="cs-title">Hôtel Grand Sahel — 4 étoiles</h3>
+        <p class="cs-description">Installation de 320 kWc pour alimenter la climatisation, l'éclairage et la piscine d'un hôtel 4 étoiles. Réduction de la facture énergétique de 70% et amélioration du bilan carbone de l'établissement.</p>
+        <div class="cs-stats">
+          <div>
+            <div class="cs-stat-number">70%</div>
+            <div class="cs-stat-label">Économie annuelle</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">320 kWc</div>
+            <div class="cs-stat-label">Puissance installée</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">4 ans</div>
+            <div class="cs-stat-label">ROI estimé</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-study-card">
+        <div class="cs-label">Commerce · 2022</div>
+        <h3 class="cs-title">Supermarché Diallo & Fils</h3>
+        <p class="cs-description">Kit professionnel 150 kWc pour un supermarché avec chaîne du froid critique. La solution hybride garantit la continuité de service même lors des coupures du réseau national.</p>
+        <div class="cs-stats">
+          <div>
+            <div class="cs-stat-number">55%</div>
+            <div class="cs-stat-label">Réduction facture</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">150 kWc</div>
+            <div class="cs-stat-label">Puissance installée</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">4.5 ans</div>
+            <div class="cs-stat-label">ROI estimé</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-study-card">
+        <div class="cs-label">Éducation · 2022</div>
+        <h3 class="cs-title">Campus Universitaire de l'Ouest</h3>
+        <p class="cs-description">Parc solaire de 1.2 MWc alimentant un campus universitaire de 8000 étudiants. Projet pilote en partenariat public-privé. 80% des besoins énergétiques couverts par l'énergie solaire.</p>
+        <div class="cs-stats">
+          <div>
+            <div class="cs-stat-number">80%</div>
+            <div class="cs-stat-label">Besoins couverts</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">1.2 MWc</div>
+            <div class="cs-stat-label">Puissance installée</div>
+          </div>
+          <div>
+            <div class="cs-stat-number">5 ans</div>
+            <div class="cs-stat-label">ROI estimé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR CTA -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;" class="fade-up">
+      <div>
+        <div class="section-label">Simulation ROI</div>
+        <h2 class="section-title">Calculez votre retour sur investissement</h2>
+        <p style="font-size:16px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;">Nos ingénieurs réalisent une simulation complète de votre projet solaire : production attendue, économies annuelles, ROI et plan de financement. Gratuit et sans engagement.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:36px;">
+          <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div class="feature-content">
+              <h4>Analyse de votre consommation</h4>
+              <p>Étude de vos factures et de votre courbe de charge pour un dimensionnement optimal.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon gold">💹</div>
+            <div class="feature-content">
+              <h4>Simulation financière sur 25 ans</h4>
+              <p>Cash flows, TRI, VAN et plan de financement adapté à votre structure.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📋</div>
+            <div class="feature-content">
+              <h4>Rapport d'ingénierie détaillé</h4>
+              <p>Plan d'implantation, single-line diagram, spécifications techniques complètes.</p>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-lg">Demander mon audit gratuit →</a>
+      </div>
+      <div style="background:var(--bg-light);border-radius:var(--radius-xl);padding:40px;">
+        <div style="font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:24px;">📊 Exemple de simulation</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
+            <span style="color:var(--text-muted);font-size:14px;">Puissance installée</span>
+            <span style="font-weight:700;color:var(--text-primary);">200 kWc</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
+            <span style="color:var(--text-muted);font-size:14px;">Production annuelle</span>
+            <span style="font-weight:700;color:var(--text-primary);">290 000 kWh</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
+            <span style="color:var(--text-muted);font-size:14px;">Économie annuelle</span>
+            <span style="font-weight:700;color:var(--accent-green);">675 000 000 GNF</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
+            <span style="color:var(--text-muted);font-size:14px;">Investissement</span>
+            <span style="font-weight:700;color:var(--text-primary);">2 400 000 000 GNF</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:16px 18px;background:var(--accent-green);border-radius:var(--radius-md);">
+            <span style="color:white;font-size:14px;font-weight:600;">ROI estimé</span>
+            <span style="font-weight:800;color:white;font-size:18px;">3.5 ans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <h2 class="cta-title">Prêt à transformer votre entreprise<br>avec l'énergie solaire ?</h2>
+      <p class="cta-subtitle">Nos experts industriels sont disponibles pour une consultation gratuite. Réponse sous 24 heures.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Audit gratuit →</a>
+        <a href="kits-residentiels.html" class="btn btn-outline btn-lg">Solutions résidentielles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div><div class="footer-logo-name">Innovea Group</div><div class="footer-logo-sub">Énergie Renouvelable</div></div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables depuis 2012.</p>
+        <div class="footer-social"><a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a></div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

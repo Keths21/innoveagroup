@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovea Group — Solutions Énergétiques Premium</title>
+  <meta name="description" content="Innovea Group, votre partenaire en solutions énergétiques durables. Panneaux solaires, batteries de stockage, kits résidentiels et professionnels.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .solution-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .solution-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+    .solution-card-img {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+    }
+    .solution-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    }
+    .solution-card-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
+    .solution-card-title { font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; }
+    .solution-card-text { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; flex: 1; }
+    .solution-card-features { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .solution-feature { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); }
+    .solution-feature::before { content: '✓'; color: var(--accent-green); font-weight: 700; font-size: 13px; }
+
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .why-features { display: flex; flex-direction: column; gap: 32px; }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .scroll-arrow {
+      width: 24px;
+      height: 24px;
+      border-right: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      transform: rotate(45deg);
+      animation: scrollBounce 2s infinite;
+    }
+    @keyframes scrollBounce {
+      0%,100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(6px); }
+    }
+
+    .tab-group {}
+    .tab-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      background: var(--bg-light);
+      padding: 6px;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-btn.active {
+      background: white;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .number-highlight {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--accent-green), #00FFD0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link active">Accueil</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="a-propos.html" class="nav-link">À Propos</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+  <div style="margin-top:auto; padding-top:24px;">
+    <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;">Demande de devis gratuit →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-particles"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Solutions Énergétiques Certifiées
+        </div>
+        <h1 class="hero-title">
+          Énergie Propre,<br>
+          <span class="text-gradient-green">Avenir</span>
+          <span class="text-gradient-gold"> Brillant</span>
+        </h1>
+        <p class="hero-description">
+          Innovea Group conçoit et installe des systèmes solaires haute performance pour les particuliers et les entreprises. Réduisez vos factures, préservez l'environnement.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Devis Gratuit →</a>
+          <a href="#solutions" class="btn btn-outline btn-lg">Nos Solutions</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="850" data-suffix="+">0+</div>
+            <div class="hero-stat-label">Installations</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="12" data-suffix=" ans">0 ans</div>
+            <div class="hero-stat-label">D'Expérience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number" data-count="98" data-suffix="%">0%</div>
+            <div class="hero-stat-label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card float">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+            <span class="hero-card-title">Tableau de bord Énergie</span>
+            <span class="hero-card-badge">EN DIRECT</span>
+          </div>
+          <div class="energy-stats">
+            <div class="energy-stat-item">
+              <span class="energy-stat-label">⚡ Production solaire</span>
+              <span class="energy-stat-value">8.4 kW</span>
+            </div>
+            <div class="energy-stat-item">
+              <span class="energy-stat-label">🔋 Stockage batterie</span>
+              <span class="energy-stat-value">94%</span>
+            </div>
+            <div class="energy-stat-item">
+              <span class="energy-stat-label">💰 Économies du jour</span>
+              <span class="energy-stat-value">52 000 GNF</span>
+            </div>
+          </div>
+          <div class="energy-chart">
+            <div class="chart-bar" style="height:45%"></div>
+            <div class="chart-bar" style="height:65%"></div>
+            <div class="chart-bar" style="height:55%"></div>
+            <div class="chart-bar" style="height:80%"></div>
+            <div class="chart-bar" style="height:70%"></div>
+            <div class="chart-bar" style="height:95%"></div>
+            <div class="chart-bar" style="height:85%"></div>
+          </div>
+          <div class="chart-label" style="font-size:11px;color:rgba(255,255,255,0.35);display:flex;gap:6px;margin-top:6px;">
+            <span style="flex:1;text-align:center;">Lun</span>
+            <span style="flex:1;text-align:center;">Mar</span>
+            <span style="flex:1;text-align:center;">Mer</span>
+            <span style="flex:1;text-align:center;">Jeu</span>
+            <span style="flex:1;text-align:center;">Ven</span>
+            <span style="flex:1;text-align:center;">Sam</span>
+            <span style="flex:1;text-align:center;">Dim</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Découvrir</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners-strip">
+  <div class="container">
+    <p class="partners-label">Certifié et reconnu par</p>
+    <div class="partners-logos">
+      <div class="partner-logo">🏅 IEC Certified</div>
+      <div class="partner-logo">⚡ IRENA Partner</div>
+      <div class="partner-logo">🌿 ISO 9001</div>
+      <div class="partner-logo">☀️ SolarPower</div>
+      <div class="partner-logo">🔋 TÜV Certified</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-item">
+        <div class="stat-number"><span data-count="850" data-suffix="">0</span><span class="stat-unit">+</span></div>
+        <div class="stat-label">Installations réalisées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span data-count="15000" data-suffix="">0</span><span class="stat-unit">+</span></div>
+        <div class="stat-label">kWh produits par jour</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span data-count="98" data-suffix="">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span data-count="12" data-suffix="">0</span><span class="stat-unit">ans</span></div>
+        <div class="stat-label">D'expertise sectorielle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section" id="solutions">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Nos Solutions</div>
+      <h2 class="section-title">Tout ce dont vous avez besoin<br>pour votre transition énergétique</h2>
+      <p class="section-subtitle">Des produits de haute qualité, des installations professionnelles et un suivi personnalisé pour une énergie solaire fiable et durable.</p>
+    </div>
+    <div class="grid-3 stagger" style="margin-bottom:48px;">
+      <div class="solution-card">
+        <div class="solution-card-img bg-dark-blue">🌞</div>
+        <div class="solution-card-body">
+          <div class="section-label" style="margin-bottom:8px;">Énergie solaire</div>
+          <h3 class="solution-card-title">Panneaux Solaires</h3>
+          <p class="solution-card-text">Technologie monocristalline dernière génération. Rendement jusqu'à 23%, garantie 25 ans sur la production.</p>
+          <div class="solution-card-features">
+            <div class="solution-feature">Rendement jusqu'à 23%</div>
+            <div class="solution-feature">Résistance aux intempéries</div>
+            <div class="solution-feature">Monitoring en temps réel</div>
+          </div>
+          <a href="panneaux-solaires.html" class="btn btn-outline-green w-full" style="justify-content:center;">Découvrir →</a>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-card-img bg-teal">🔋</div>
+        <div class="solution-card-body">
+          <div class="section-label" style="margin-bottom:8px;">Stockage</div>
+          <h3 class="solution-card-title">Batteries de Stockage</h3>
+          <p class="solution-card-text">Systèmes LiFePO4 longue durée. Stockez votre énergie produite et assurez votre autonomie même la nuit.</p>
+          <div class="solution-card-features">
+            <div class="solution-feature">Technologie LiFePO4</div>
+            <div class="solution-feature">10 000+ cycles de vie</div>
+            <div class="solution-feature">Recharge rapide</div>
+          </div>
+          <a href="batteries.html" class="btn btn-outline-green w-full" style="justify-content:center;">Découvrir →</a>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="solution-card-img bg-forest">🏡</div>
+        <div class="solution-card-body">
+          <div class="section-label" style="margin-bottom:8px;">Kits complets</div>
+          <h3 class="solution-card-title">Kits Clé en Main</h3>
+          <p class="solution-card-text">Des solutions complètes et prêtes à l'emploi pour particuliers et professionnels, installation incluse.</p>
+          <div class="solution-card-features">
+            <div class="solution-feature">Kits résidentiels & pro</div>
+            <div class="solution-feature">Installation professionnelle</div>
+            <div class="solution-feature">SAV 24h/7j</div>
+          </div>
+          <a href="kits-residentiels.html" class="btn btn-outline-green w-full" style="justify-content:center;">Découvrir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center fade-up">
+      <a href="kits-professionnels.html" class="btn btn-outline-dark">Voir les kits professionnels →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY INNOVEA -->
+<section class="section section-light">
+  <div class="container">
+    <div class="why-grid">
+      <div class="slide-left">
+        <div class="section-label">Pourquoi nous choisir</div>
+        <h2 class="section-title">L'excellence au service<br>de votre énergie</h2>
+        <p class="section-subtitle" style="margin-bottom:40px;">Depuis 12 ans, nous accompagnons les particuliers et entreprises dans leur transition vers une énergie propre, fiable et rentable.</p>
+        <div class="number-highlight" style="margin-bottom:8px;">12</div>
+        <p class="text-muted">années d'expérience en solutions énergétiques</p>
+      </div>
+      <div class="why-features stagger slide-right">
+        <div class="feature-item">
+          <div class="feature-icon">🏆</div>
+          <div class="feature-content">
+            <h4>Expertise certifiée</h4>
+            <p>Nos équipes sont certifiées par les organismes internationaux les plus reconnus dans le domaine de l'énergie solaire.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon gold">💎</div>
+          <div class="feature-content">
+            <h4>Qualité garantie</h4>
+            <p>Nous utilisons uniquement des produits de classe A, sélectionnés parmi les meilleurs fabricants mondiaux.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-content">
+            <h4>Service après-vente</h4>
+            <p>Support technique disponible 7j/7, maintenance préventive et réactive pour assurer votre tranquillité d'esprit.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon gold">💰</div>
+          <div class="feature-content">
+            <h4>Rentabilité prouvée</h4>
+            <p>Nos clients récupèrent leur investissement en moyenne en 3 à 5 ans grâce à nos systèmes optimisés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Comment ça marche</div>
+      <h2 class="section-title">Votre projet solaire en 4 étapes simples</h2>
+      <p class="section-subtitle">De la consultation initiale à la mise en service, nous gérons tout pour vous.</p>
+    </div>
+    <div class="process-steps stagger">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4 class="step-title">Consultation</h4>
+        <p class="step-text">Analyse de vos besoins énergétiques et étude de faisabilité gratuite par nos experts.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4 class="step-title">Conception</h4>
+        <p class="step-text">Dimensionnement sur mesure de votre installation et proposition technique détaillée.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4 class="step-title">Installation</h4>
+        <p class="step-text">Pose professionnelle par nos techniciens certifiés en 1 à 3 jours selon la taille du projet.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h4 class="step-title">Suivi & SAV</h4>
+        <p class="step-text">Monitoring à distance, maintenance annuelle et support technique disponible 24h/24.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Témoignages</div>
+      <h2 class="section-title">Ce que disent nos clients</h2>
+      <p class="section-subtitle">Plus de 850 familles et entreprises font confiance à Innovea Group pour leur énergie.</p>
+    </div>
+    <div class="testimonials-grid stagger">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Installation impeccable, équipe très professionnelle. Nos factures ont été réduites de 70% dès le premier mois. Je recommande vivement Innovea Group à toute ma famille."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar green">AM</div>
+          <div>
+            <div class="t-name">Amadou Mbaye</div>
+            <div class="t-role">Propriétaire, Conakry</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"En tant qu'entreprise, nous cherchions à réduire nos coûts énergétiques. Le kit professionnel d'Innovea nous a permis d'économiser 38 millions GNF par an. ROI en 4 ans."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar blue">FK</div>
+          <div>
+            <div class="t-name">Fatou Konaté</div>
+            <div class="t-role">Directrice, Groupe Konaté Sarl</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Le suivi après-installation est exceptionnel. Leur application de monitoring me permet de voir ma production en temps réel. La batterie de stockage assure mon autonomie totale."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar gold">ID</div>
+          <div>
+            <div class="t-name">Ibrahim Diallo</div>
+            <div class="t-role">Villa Résidentielle, Conakry</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <div class="section-label" style="justify-content:center;">Passez à l'action</div>
+      <h2 class="cta-title">Prêt à rejoindre la révolution<br>de l'énergie solaire ?</h2>
+      <p class="cta-subtitle">Obtenez votre étude personnalisée gratuite et découvrez combien vous pouvez économiser avec Innovea Group.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Obtenir un devis gratuit →</a>
+        <a href="a-propos.html" class="btn btn-outline btn-lg">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div>
+            <div class="footer-logo-name">Innovea Group</div>
+            <div class="footer-logo-sub">Énergie Renouvelable</div>
+          </div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables, innovantes et rentables depuis 2012.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">📘</a>
+          <a href="#" class="social-btn">📸</a>
+          <a href="#" class="social-btn">💼</a>
+          <a href="#" class="social-btn">🐦</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="a-propos.html#equipe" class="footer-link">→ Notre Équipe</a>
+          <a href="a-propos.html#certifications" class="footer-link">→ Certifications</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+          <div class="footer-link">🕐 Lun–Ven: 8h–18h</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+        <a href="#" class="footer-bottom-link">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

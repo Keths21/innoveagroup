@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kits Résidentiels — Innovea Group</title>
+  <meta name="description" content="Kits solaires complets pour particuliers. 3 formules clé en main avec installation professionnelle incluse.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .inclusion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .inclusion-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; background: var(--bg-lighter);
+      border-radius: var(--radius-md); font-size: 14px; color: var(--text-secondary); font-weight: 500;
+    }
+    .inclusion-icon { font-size: 20px; flex-shrink: 0; }
+    .roi-card {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: var(--radius-xl); padding: 48px; color: white;
+      position: relative; overflow: hidden;
+    }
+    .roi-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(0,200,150,0.15), transparent 60%);
+    }
+    .roi-card > * { position: relative; z-index: 1; }
+    .roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .roi-stat { text-align: center; padding: 24px; background: rgba(255,255,255,0.08); border-radius: var(--radius-lg); }
+    .roi-number { font-size: 48px; font-weight: 900; color: var(--accent-green); letter-spacing: -0.03em; }
+    .roi-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+    .financing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .financing-card {
+      background: white; border-radius: var(--radius-lg); padding: 28px;
+      box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.06); text-align: center; transition: var(--transition);
+    }
+    .financing-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--accent-green); }
+    .financing-icon { font-size: 40px; margin-bottom: 16px; }
+    .financing-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .financing-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link">À Propos</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a><span class="sep">›</span><span class="current">Kits Résidentiels</span>
+      </div>
+      <div class="hero-badge" style="margin-bottom:20px;">
+        <span class="badge-dot"></span>
+        Installation clé en main — Particuliers
+      </div>
+      <h1 class="page-hero-title">Kits Solaires<br><span class="text-gradient-gold">Résidentiels</span></h1>
+      <p class="page-hero-subtitle">Des solutions complètes pensées pour les particuliers. Tout est inclus : panneaux, batterie, onduleur, installation et mise en service. Choisissez votre formule et commencez à économiser.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary btn-lg">Voir les formules →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Étude gratuite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div class="slide-left">
+        <div class="section-label">Tout inclus</div>
+        <h2 class="section-title">Zéro tracas,<br>100% solaire</h2>
+        <p class="section-subtitle" style="margin-bottom:32px;">Chaque kit comprend tout le matériel et les services nécessaires pour une installation parfaite et un fonctionnement optimal.</p>
+        <a href="contact.html" class="btn btn-primary">Obtenir mon devis →</a>
+      </div>
+      <div class="slide-right">
+        <div class="inclusion-grid">
+          <div class="inclusion-item"><span class="inclusion-icon">🌞</span>Panneaux solaires premium</div>
+          <div class="inclusion-item"><span class="inclusion-icon">🔋</span>Batterie de stockage LiFePO4</div>
+          <div class="inclusion-item"><span class="inclusion-icon">⚡</span>Onduleur hybride certifié</div>
+          <div class="inclusion-item"><span class="inclusion-icon">🔌</span>Câblage & protection DC/AC</div>
+          <div class="inclusion-item"><span class="inclusion-icon">🏗️</span>Structure de montage aluminium</div>
+          <div class="inclusion-item"><span class="inclusion-icon">📱</span>Système de monitoring</div>
+          <div class="inclusion-item"><span class="inclusion-icon">👷</span>Installation professionnelle</div>
+          <div class="inclusion-item"><span class="inclusion-icon">📋</span>Démarches administratives</div>
+          <div class="inclusion-item"><span class="inclusion-icon">🎓</span>Formation utilisateur</div>
+          <div class="inclusion-item"><span class="inclusion-icon">🛡️</span>Garantie & SAV inclus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-light" id="pricing">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Nos Formules</div>
+      <h2 class="section-title">Choisissez votre kit résidentiel</h2>
+      <p class="section-subtitle">3 formules clé en main, adaptées à toutes les tailles de maison. Installation et garantie incluses.</p>
+    </div>
+    <div class="pricing-grid fade-up">
+      <!-- Essentiel -->
+      <div class="pricing-card">
+        <div class="pricing-name">Kit Essentiel</div>
+        <div class="pricing-price-amount"><span class="pricing-currency">À</span> partir de</div>
+        <div style="font-size:36px;font-weight:900;letter-spacing:-0.02em;color:var(--text-primary);">35 000 000</div>
+        <div class="pricing-period">GNF · Installation incluse</div>
+        <div class="pricing-divider"></div>
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Ce qui est inclus</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>6 panneaux solaires 500W (3 kWc)</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Batterie LiFePO4 5 kWh</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleur hybride 3 kW</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Câblage & coffret AC/DC</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Structure aluminium</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Installation en 1 journée</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Monitoring de base (Wi-Fi)</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Garantie 5 ans main d'œuvre</div>
+        </div>
+        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Commander →</a>
+        <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;">Idéal pour 2-3 personnes · Économies dès le 1er mois</div>
+      </div>
+
+      <!-- Confort - Featured -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">⭐ Le Plus Populaire</div>
+        <div class="pricing-name">Kit Confort</div>
+        <div class="pricing-price-amount" style="color:white;"><span class="pricing-currency">À</span> partir de</div>
+        <div style="font-size:36px;font-weight:900;letter-spacing:-0.02em;color:white;">62 000 000</div>
+        <div class="pricing-period">GNF · Installation incluse</div>
+        <div class="pricing-divider"></div>
+        <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.5);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Ce qui est inclus</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>12 panneaux solaires 500W (6 kWc)</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Batterie LiFePO4 10 kWh</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleur hybride 6 kW</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Câblage & coffret sécurisé</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Structure aluminium anodisé</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Installation en 1-2 jours</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Monitoring avancé + appli mobile</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Garantie 10 ans main d'œuvre</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Maintenance annuelle 1 an offerte</div>
+        </div>
+        <a href="contact.html" class="btn btn-gold w-full btn-lg" style="justify-content:center;">Commander →</a>
+        <div style="font-size:12px;color:rgba(255,255,255,0.45);text-align:center;margin-top:12px;">Idéal pour 4-6 personnes · Autonomie nocturne totale</div>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-card">
+        <div class="pricing-name">Kit Premium</div>
+        <div class="pricing-price-amount"><span class="pricing-currency">À</span> partir de</div>
+        <div style="font-size:36px;font-weight:900;letter-spacing:-0.02em;color:var(--text-primary);">110 000 000</div>
+        <div class="pricing-period">GNF · Installation incluse</div>
+        <div class="pricing-divider"></div>
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Ce qui est inclus</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><div class="pricing-check">✓</div>20 panneaux solaires 500W (10 kWc)</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Batterie LiFePO4 20 kWh</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleur hybride 10 kW</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Câblage premium & tableau dédié</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Structure haut de gamme</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Installation en 2-3 jours</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Monitoring premium multi-zone</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Garantie 15 ans main d'œuvre</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Maintenance 3 ans offerte</div>
+          <div class="pricing-feature"><div class="pricing-check">✓</div>Support prioritaire 24h/7j</div>
+        </div>
+        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Commander →</a>
+        <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px;">Villas & grandes maisons · Autonomie 100%</div>
+      </div>
+    </div>
+
+    <div class="text-center fade-up" style="margin-top:40px;padding:24px;background:white;border-radius:var(--radius-lg);border:1px solid rgba(0,0,0,0.06);">
+      <p style="font-size:15px;color:var(--text-muted);">💡 <strong>Besoin d'une solution sur mesure ?</strong> Nos ingénieurs dimensionnent votre installation selon votre consommation exacte et vos besoins spécifiques.</p>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:16px;">Étude personnalisée gratuite →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="section">
+  <div class="container">
+    <div class="roi-card fade-up">
+      <div class="roi-grid">
+        <div>
+          <div class="section-label">Retour sur investissement</div>
+          <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:white;margin-bottom:16px;line-height:1.15;">Votre installation se rembourse toute seule</h2>
+          <p style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:32px;">Avec un kit solaire Innovea, vous réduisez votre facture d'électricité de 60 à 90% dès le premier mois. L'installation est amortie en 3 à 5 ans.</p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Calculer mes économies →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div class="roi-stat">
+            <div class="roi-number">75%</div>
+            <div class="roi-label">Réduction de facture moyenne</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-number">4 ans</div>
+            <div class="roi-label">Retour sur investissement moyen</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-number">25 ans</div>
+            <div class="roi-label">Durée de vie des panneaux</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-number">21 ans</div>
+            <div class="roi-label">D'économies nettes garanties</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Financement</div>
+      <h2 class="section-title">Des options pour faciliter votre projet</h2>
+    </div>
+    <div class="financing-grid stagger">
+      <div class="financing-card">
+        <div class="financing-icon">💳</div>
+        <div class="financing-title">Paiement comptant</div>
+        <p class="financing-text">Profitez d'une remise de 5% sur votre commande en cas de paiement intégral à la commande.</p>
+      </div>
+      <div class="financing-card">
+        <div class="financing-icon">📅</div>
+        <div class="financing-title">Paiement en plusieurs fois</div>
+        <p class="financing-text">Étalez votre paiement sur 12, 24 ou 36 mois sans intérêts. Commencez à économiser avant d'avoir tout payé.</p>
+      </div>
+      <div class="financing-card">
+        <div class="financing-icon">🏦</div>
+        <div class="financing-title">Crédit bancaire partenaire</div>
+        <p class="financing-text">Nous travaillons avec des banques partenaires pour vous proposer des solutions de crédit adaptées à votre situation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Témoignages</div>
+      <h2 class="section-title">Ils ont franchi le pas</h2>
+    </div>
+    <div class="testimonials-grid stagger">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"J'ai choisi le kit Confort pour ma villa. L'installation s'est faite en une journée et demie. Ma facture est passée de 1 200 000 à 200 000 GNF. Incroyable !"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar green">MK</div>
+          <div><div class="t-name">Mariama Kouyaté</div><div class="t-role">Villa, Conakry</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Le kit Essentiel était parfait pour commencer. L'application de monitoring est excellent. Je vois ma production en temps réel depuis mon téléphone."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar blue">OD</div>
+          <div><div class="t-name">Ousmane Diallo</div><div class="t-role">Appartement, Conakry</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Le kit Premium pour ma grande maison : plus jamais de coupures d'électricité ! La batterie 20 kWh nous tient toute la nuit et même le lendemain matin."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar gold">AS</div>
+          <div><div class="t-name">Aminata Sylla</div><div class="t-role">Villa 5 chambres, Conakry</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <h2 class="cta-title">Commencez votre transition solaire aujourd'hui</h2>
+      <p class="cta-subtitle">Devis gratuit et sans engagement en 24h. Nos experts vous conseillent le kit le mieux adapté à votre maison.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Devis gratuit en 24h →</a>
+        <a href="kits-professionnels.html" class="btn btn-outline btn-lg">Voir les kits pros</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div><div class="footer-logo-name">Innovea Group</div><div class="footer-logo-sub">Énergie Renouvelable</div></div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables depuis 2012.</p>
+        <div class="footer-social"><a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a></div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

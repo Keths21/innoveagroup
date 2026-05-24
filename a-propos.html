@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À Propos — Innovea Group</title>
+  <meta name="description" content="Innovea Group, 12 ans d'expertise en solutions énergétiques durables. Découvrez notre histoire, notre équipe et nos valeurs.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .mission-visual {
+      height: 480px; background: linear-gradient(135deg, #0B1D3A, #1A3A6B);
+      border-radius: var(--radius-xl); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; position: relative; overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .mission-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 40% 40%, rgba(0,200,150,0.2), transparent 60%);
+    }
+    .mission-emoji { font-size: 120px; position: relative; z-index: 1; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .mission-badge {
+      position: relative; z-index: 1; margin-top: 24px;
+      background: rgba(0,200,150,0.15); border: 1px solid rgba(0,200,150,0.3);
+      color: var(--accent-green); padding: 10px 24px; border-radius: 100px;
+      font-size: 14px; font-weight: 600;
+    }
+    .cert-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px; background: white; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); transition: var(--transition);
+    }
+    .cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--accent-green); }
+    .cert-card-icon { font-size: 40px; flex-shrink: 0; }
+    .cert-card-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .cert-card-org { font-size: 13px; color: var(--text-muted); }
+    .team-card-enhanced {
+      background: white; border-radius: var(--radius-xl); overflow: hidden;
+      box-shadow: var(--shadow-md); transition: var(--transition); border: 1px solid rgba(0,0,0,0.05);
+    }
+    .team-card-enhanced:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+    .team-card-avatar {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      font-size: 64px; font-weight: 900; color: white;
+    }
+    .team-card-body { padding: 24px; text-align: center; }
+    .team-card-name { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+    .team-card-role { font-size: 13px; color: var(--accent-green); font-weight: 600; margin-bottom: 12px; }
+    .team-card-bio { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .impact-card {
+      background: white; border-radius: var(--radius-lg); padding: 32px; text-align: center;
+      border: 1px solid rgba(0,0,0,0.06); box-shadow: var(--shadow-xs); transition: var(--transition);
+    }
+    .impact-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .impact-icon { font-size: 40px; margin-bottom: 16px; }
+    .impact-number { font-size: 36px; font-weight: 900; color: var(--accent-green); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .impact-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+    @media (max-width: 768px) {
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">☀️</div>
+      <div class="logo-text">
+        <span class="logo-text-main">Innovea</span>
+        <span class="logo-text-sub">Énergie</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Produits ▾</a>
+        <div class="nav-dropdown">
+          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
+          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
+          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
+          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link active">À Propos</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+    <div class="navbar-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
+  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
+  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
+  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
+  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
+  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
+  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a><span class="sep">›</span><span class="current">À Propos</span>
+      </div>
+      <h1 class="page-hero-title">Nous sommes <span class="text-gradient-green">Innovea Group</span></h1>
+      <p class="page-hero-subtitle">Depuis 2012, nous œuvrons pour rendre l'énergie solaire accessible, fiable et rentable pour tous. Notre mission : accélérer la transition énergétique en Afrique et au-delà.</p>
+      <div class="hero-actions">
+        <a href="#histoire" class="btn btn-primary btn-lg">Notre histoire →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section" id="histoire">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-visual slide-left">
+        <div class="mission-emoji">🌍</div>
+        <div class="mission-badge">Innovea Group · Depuis 2012</div>
+      </div>
+      <div class="slide-right">
+        <div class="section-label">Notre Mission</div>
+        <h2 class="section-title">Énergie propre pour<br>tous, partout</h2>
+        <p style="font-size:17px;color:var(--text-muted);line-height:1.75;margin-bottom:24px;">
+          Innovea Group est née d'une conviction simple : l'énergie solaire est la solution la plus adaptée aux besoins énergétiques de l'Afrique. Abondant, gratuit et inépuisable, le soleil est notre principale ressource.
+        </p>
+        <p style="font-size:17px;color:var(--text-muted);line-height:1.75;margin-bottom:36px;">
+          Depuis notre création, nous avons installé plus de 850 systèmes solaires, formé plus de 200 techniciens locaux, et contribué à alimenter des milliers de foyers et d'entreprises en énergie propre et fiable.
+        </p>
+        <div style="display:flex;gap:32px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:36px;font-weight:900;color:var(--accent-green);letter-spacing:-0.02em;">850+</div>
+            <div style="font-size:13px;color:var(--text-muted);">Installations réalisées</div>
+          </div>
+          <div>
+            <div style="font-size:36px;font-weight:900;color:var(--accent-gold);letter-spacing:-0.02em;">12</div>
+            <div style="font-size:13px;color:var(--text-muted);">Années d'expérience</div>
+          </div>
+          <div>
+            <div style="font-size:36px;font-weight:900;color:var(--accent-green);letter-spacing:-0.02em;">8</div>
+            <div style="font-size:13px;color:var(--text-muted);">Pays couverts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTOIRE TIMELINE -->
+<section class="section section-light">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <div class="slide-left">
+        <div class="section-label">Notre Parcours</div>
+        <h2 class="section-title">12 ans d'innovation<br>énergétique</h2>
+        <p class="section-subtitle" style="margin-bottom:0;">De startup pionnière à leader régional de l'énergie solaire, voici les étapes clés de notre aventure.</p>
+      </div>
+      <div class="timeline slide-right">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2012</div>
+          <div class="timeline-title">Fondation d'Innovea Group</div>
+          <p class="timeline-text">Création de l'entreprise par une équipe de 5 ingénieurs passionnés par les énergies renouvelables. Premières installations résidentielles à Conakry.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2015</div>
+          <div class="timeline-title">Expansion régionale</div>
+          <p class="timeline-text">Ouverture de bureaux en Côte d'Ivoire et en Guinée. 100ème installation franchie. Obtention des premières certifications internationales.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2018</div>
+          <div class="timeline-title">Lancement des solutions professionnelles</div>
+          <p class="timeline-text">Développement d'une offre dédiée aux entreprises et industries. Premiers projets MW. Partenariats avec les grands fabricants mondiaux.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-title">Intégration des batteries LiFePO4</div>
+          <p class="timeline-text">Intégration des systèmes de stockage d'énergie dans notre gamme. Lancement de l'application de monitoring InnoApp. 500 installations atteintes.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024</div>
+          <div class="timeline-title">Leader régional reconnu</div>
+          <p class="timeline-text">Plus de 850 installations, présence dans 8 pays, 200+ techniciens formés. Prix de l'Innovation Énergétique 2024 décerné par l'IRENA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Nos Valeurs</div>
+      <h2 class="section-title">Ce qui nous guide chaque jour</h2>
+    </div>
+    <div class="values-grid stagger">
+      <div class="value-card">
+        <div class="value-icon">💡</div>
+        <div class="value-title">Innovation Permanente</div>
+        <p class="value-text">Nous investissons continuellement dans les dernières technologies solaires pour vous offrir les meilleures performances. Notre équipe R&D suit l'évolution mondiale du secteur.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏆</div>
+        <div class="value-title">Excellence & Qualité</div>
+        <p class="value-text">Chaque installation est réalisée avec des matériaux premium et par des techniciens certifiés. Nous ne faisons aucun compromis sur la qualité de nos produits et services.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌿</div>
+        <div class="value-title">Durabilité Environnementale</div>
+        <p class="value-text">Chaque panneau solaire installé représente des tonnes de CO₂ évitées. Nous mesurons et communiquons l'impact environnemental positif de chaque projet.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div class="value-title">Partenariat Client</div>
+        <p class="value-text">Nous construisons des relations durables avec nos clients, pas juste des transactions. Du premier contact à la 25ème année de fonctionnement, nous sommes là.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section class="section section-light" id="equipe">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Notre Équipe</div>
+      <h2 class="section-title">Les experts derrière Innovea</h2>
+      <p class="section-subtitle">Une équipe pluridisciplinaire d'ingénieurs, techniciens et spécialistes passionnés par l'énergie solaire.</p>
+    </div>
+    <div class="grid-4 stagger">
+      <div class="team-card-enhanced">
+        <div class="team-card-avatar" style="background:linear-gradient(135deg,var(--accent-green),var(--accent-green-dark));">MM</div>
+        <div class="team-card-body">
+          <div class="team-card-name">Mamadou Mbaye</div>
+          <div class="team-card-role">CEO & Co-Fondateur</div>
+          <p class="team-card-bio">Ingénieur en énergies renouvelables (EPFL). 15 ans d'expérience en développement de projets solaires en Afrique.</p>
+        </div>
+      </div>
+      <div class="team-card-enhanced">
+        <div class="team-card-avatar" style="background:linear-gradient(135deg,var(--primary-light),var(--primary));">FS</div>
+        <div class="team-card-body">
+          <div class="team-card-name">Fatoumata Sall</div>
+          <div class="team-card-role">Directrice Technique</div>
+          <p class="team-card-bio">PhD en photovoltaïque (INSA Lyon). Spécialiste des systèmes hybrides et de l'intégration des batteries de stockage.</p>
+        </div>
+      </div>
+      <div class="team-card-enhanced">
+        <div class="team-card-avatar" style="background:linear-gradient(135deg,var(--accent-gold),var(--accent-gold-dark));">IK</div>
+        <div class="team-card-body">
+          <div class="team-card-name">Ibrahim Konaté</div>
+          <div class="team-card-role">Directeur Commercial</div>
+          <p class="team-card-bio">MBA HEC Paris. 10 ans dans le développement commercial de solutions d'énergie propre pour les entreprises africaines.</p>
+        </div>
+      </div>
+      <div class="team-card-enhanced">
+        <div class="team-card-avatar" style="background:linear-gradient(135deg,#1A4D1B,#0F2D10);">AD</div>
+        <div class="team-card-body">
+          <div class="team-card-name">Aissatou Diallo</div>
+          <div class="team-card-role">Ingénieure Projet Senior</div>
+          <p class="team-card-bio">Diplômée de l'Institut Supérieur des Mines de Conakry. Coordinatrice de plus de 150 projets industriels et commerciaux.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;padding:32px;background:white;border-radius:var(--radius-xl);border:1px solid rgba(0,0,0,0.06);" class="fade-up">
+      <div style="font-size:24px;margin-bottom:12px;">👥</div>
+      <div style="font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:8px;">Plus de 80 professionnels</div>
+      <p style="font-size:14px;color:var(--text-muted);">Ingénieurs, techniciens d'installation, gestionnaires de projets, experts en électricité et support client — tous dédiés à votre satisfaction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label">Certifications & Accréditations</div>
+      <h2 class="section-title">La qualité certifiée par les meilleurs</h2>
+      <p class="section-subtitle">Nos certifications attestent de la rigueur et du professionnalisme de nos équipes et de nos installations.</p>
+    </div>
+    <div class="grid-3 stagger">
+      <div class="cert-card">
+        <div class="cert-card-icon">🏅</div>
+        <div>
+          <div class="cert-card-title">IEC 61215 / IEC 61730</div>
+          <div class="cert-card-org">Commission Électrotechnique Internationale — Sécurité modules PV</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">⭐</div>
+        <div>
+          <div class="cert-card-title">ISO 9001:2015</div>
+          <div class="cert-card-org">Système de Management de la Qualité — Bureau Veritas</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">🌍</div>
+        <div>
+          <div class="cert-card-title">IRENA Member</div>
+          <div class="cert-card-org">Agence Internationale pour les Énergies Renouvelables</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">⚡</div>
+        <div>
+          <div class="cert-card-title">MCS Certified</div>
+          <div class="cert-card-org">Microgeneration Certification Scheme — Installateur certifié</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">🔋</div>
+        <div>
+          <div class="cert-card-title">TÜV Rheinland</div>
+          <div class="cert-card-org">Certification des systèmes de stockage d'énergie</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">🏆</div>
+        <div>
+          <div class="cert-card-title">Prix Innovation 2024</div>
+          <div class="cert-card-org">African Energy Excellence Awards — Meilleure entreprise solaire</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-label" style="justify-content:center;">Notre Impact</div>
+      <h2 class="section-title white">Chaque installation compte</h2>
+      <p class="section-subtitle white">Au-delà des chiffres, chaque projet représente des familles qui accèdent à une énergie fiable, et une planète qui respire mieux.</p>
+    </div>
+    <div class="grid-4 stagger">
+      <div class="impact-card">
+        <div class="impact-icon">⚡</div>
+        <div class="impact-number">15 000+</div>
+        <div class="impact-label">kWh produits quotidiennement</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌍</div>
+        <div class="impact-number">5 000 t</div>
+        <div class="impact-label">CO₂ évitées chaque année</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">👨‍👩‍👧‍👦</div>
+        <div class="impact-number">50 000+</div>
+        <div class="impact-label">Personnes bénéficiaires</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">👷</div>
+        <div class="impact-number">200+</div>
+        <div class="impact-label">Techniciens formés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-block fade-up">
+      <h2 class="cta-title">Rejoignez la famille Innovea</h2>
+      <p class="cta-subtitle">Faites partie des milliers de clients qui ont choisi l'énergie propre, fiable et rentable avec Innovea Group.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter →</a>
+        <a href="kits-residentiels.html" class="btn btn-outline btn-lg">Voir nos solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">☀️</div>
+          <div><div class="footer-logo-name">Innovea Group</div><div class="footer-logo-sub">Énergie Renouvelable</div></div>
+        </div>
+        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables depuis 2012.</p>
+        <div class="footer-social"><a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a></div>
+      </div>
+      <div>
+        <div class="footer-col-title">Produits</div>
+        <div class="footer-links">
+          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
+          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
+          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
+          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <div class="footer-links">
+          <a href="a-propos.html" class="footer-link">→ À Propos</a>
+          <a href="contact.html" class="footer-link">→ Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <div class="footer-link">📍 Conakry, Guinée</div>
+          <div class="footer-link">📞 +224 XXX XXX XXX</div>
+          <div class="footer-link">✉️ contact@innoveagroup.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Mentions légales</a>
+        <a href="#" class="footer-bottom-link">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
