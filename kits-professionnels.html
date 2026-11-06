@@ -3,482 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kits Professionnels — Innovea Group</title>
-  <meta name="description" content="Solutions solaires pour entreprises, industries et institutions. ROI prouvé, économies massives d'énergie.">
+  <title>Solaire pour entreprises et industries · Innovea Group</title>
+  <meta name="description" content="Installations solaires professionnelles de 20 kWc à plusieurs mégawatts : audit énergétique, ingénierie EPC, stockage BESS et maintenance. Innovea Group, Guinée.">
+  <meta name="theme-color" content="#f7f4ee">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .sector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .sector-card {
-      background: white; border-radius: var(--radius-lg); padding: 28px;
-      border: 1px solid rgba(0,0,0,0.07); transition: var(--transition); text-align: center;
-    }
-    .sector-card:hover { border-color: var(--accent-green); box-shadow: var(--shadow-md); transform: translateY(-4px); }
-    .sector-icon { font-size: 44px; margin-bottom: 14px; }
-    .sector-name { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-    .sector-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-    .case-study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .case-study-card {
-      background: white; border-radius: var(--radius-xl); padding: 36px;
-      box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
-    }
-    .case-study-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
-    .cs-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-green); margin-bottom: 12px; }
-    .cs-title { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; }
-    .cs-description { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; }
-    .cs-stats { display: flex; gap: 24px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
-    .cs-stat-number { font-size: 26px; font-weight: 900; color: var(--accent-green); }
-    .cs-stat-label { font-size: 12px; color: var(--text-muted); }
-    .pro-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .advantage-strip {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-      padding: 48px; background: var(--primary); border-radius: var(--radius-xl);
-    }
-    .adv-strip-item { text-align: center; }
-    .adv-strip-icon { font-size: 40px; margin-bottom: 12px; }
-    .adv-strip-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
-    .adv-strip-text { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
-    @media (max-width: 768px) {
-      .sector-grid, .case-study-grid, .pro-pricing-grid { grid-template-columns: 1fr; }
-      .advantage-strip { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
 </head>
 <body>
-
-<nav class="navbar scrolled" id="navbar">
+<header class="navbar" id="navbar">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">
-      <div class="logo-icon">☀️</div>
-      <div class="logo-text">
-        <span class="logo-text-main">Innovea</span>
-        <span class="logo-text-sub">Énergie</span>
-      </div>
+    <a href="index.html" class="brand" aria-label="Innovea Group, accueil">
+      <img src="img/logo-ig.png" alt="" width="32" height="32">
+      <span>Innovea Group</span>
     </a>
-    <nav class="navbar-nav">
+    <nav class="nav-links" aria-label="Navigation principale">
       <div class="nav-item"><a href="index.html" class="nav-link">Accueil</a></div>
       <div class="nav-item">
-        <a href="#" class="nav-link active">Produits ▾</a>
-        <div class="nav-dropdown">
-          <a href="panneaux-solaires.html"><div class="dd-icon">🌞</div>Panneaux Solaires</a>
-          <a href="batteries.html"><div class="dd-icon">🔋</div>Batteries de Stockage</a>
-          <a href="kits-residentiels.html"><div class="dd-icon">🏠</div>Kits Résidentiels</a>
-          <a href="kits-professionnels.html"><div class="dd-icon">🏢</div>Kits Professionnels</a>
+        <a href="panneaux-solaires.html" class="nav-link active" aria-haspopup="true">Produits<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></a>
+        <div class="nav-menu">
+        <a href="panneaux-solaires.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg>Panneaux solaires</a>
+        <a href="batteries.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2" /> <path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" /> <path d="m11 7-3 5h4l-3 5" /> <line x1="22" x2="22" y1="11" y2="13" /></svg>Batteries de stockage</a>
+        <a href="kits-residentiels.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>Kits résidentiels</a>
+        <a href="kits-professionnels.html" class="active" aria-current="page"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></svg>Kits professionnels</a>
         </div>
       </div>
-      <div class="nav-item"><a href="a-propos.html" class="nav-link">À Propos</a></div>
+      <div class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></div>
       <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
     </nav>
-    <div class="navbar-cta">
-      <a href="contact.html" class="btn btn-primary btn-sm">Devis gratuit →</a>
-    </div>
-    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Devis gratuit</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="i i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /> <line x1="4" x2="20" y1="18" y2="18" /></svg><svg class="i i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></svg>
+    </button>
   </div>
+</header>
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+  <a class="m-link" href="index.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>Accueil</a>
+  <div class="m-group">Produits</div>
+  <a class="m-link" href="panneaux-solaires.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></svg>Panneaux solaires</a>
+  <a class="m-link" href="batteries.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2" /> <path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" /> <path d="m11 7-3 5h4l-3 5" /> <line x1="22" x2="22" y1="11" y2="13" /></svg>Batteries de stockage</a>
+  <a class="m-link" href="kits-residentiels.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>Kits résidentiels</a>
+  <a class="m-link" href="kits-professionnels.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></svg>Kits professionnels</a>
+  <div class="m-group">Entreprise</div>
+  <a class="m-link" href="a-propos.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></svg>À propos</a>
+  <a class="m-link" href="contact.html"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-lg btn-block">Demander un devis gratuit</a>
 </nav>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html" class="mobile-nav-link">🏠 Accueil</a>
-  <a href="panneaux-solaires.html" class="mobile-nav-link">🌞 Panneaux Solaires</a>
-  <a href="batteries.html" class="mobile-nav-link">🔋 Batteries de Stockage</a>
-  <a href="kits-residentiels.html" class="mobile-nav-link">🏡 Kits Résidentiels</a>
-  <a href="kits-professionnels.html" class="mobile-nav-link">🏢 Kits Professionnels</a>
-  <a href="a-propos.html" class="mobile-nav-link">👥 À Propos</a>
-  <a href="contact.html" class="mobile-nav-link">📞 Contact</a>
-</div>
-
-<!-- PAGE HERO -->
+<main>
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-content">
-      <div class="breadcrumb">
-        <a href="index.html">Accueil</a><span class="sep">›</span><span class="current">Kits Professionnels</span>
-      </div>
-      <div class="hero-badge" style="margin-bottom:20px;">
-        <span class="badge-dot"></span>
-        Solutions Enterprise & Industrielles
-      </div>
-      <h1 class="page-hero-title">Kits Solaires<br><span class="text-gradient-green">Professionnels</span></h1>
-      <p class="page-hero-subtitle">Réduisez massivement vos coûts énergétiques et améliorez votre compétitivité. Nos solutions d'entreprise sont conçues pour des installations de 20 kWc à plusieurs mégawatts.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">Audit énergétique gratuit →</a>
-        <a href="#solutions-pro" class="btn btn-outline btn-lg">Nos solutions</a>
-      </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg><span aria-current="page">Kits professionnels</span></nav>
+    <h1 class="page-title">Le solaire pour les entreprises, de 20 kWc au mégawatt</h1>
+    <p class="page-lead">Réduisez vos coûts énergétiques et sécurisez votre production. Nous concevons, installons et entretenons des centrales solaires pour les commerces, les industries et les institutions.</p>
+    <div class="actions">
+      <a href="contact.html" class="btn btn-primary btn-lg">Demander un audit gratuit</a>
+      <a href="#solutions" class="btn btn-secondary btn-lg">Voir les solutions</a>
     </div>
   </div>
 </section>
 
-<!-- KEY STATS -->
-<section class="section section-dark" style="padding:60px 0;">
-  <div class="container">
-    <div class="stats-grid fade-up">
-      <div class="stat-item">
-        <div class="stat-number"><span>60</span><span class="stat-unit">%</span></div>
-        <div class="stat-label">Réduction coûts énergie</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number"><span>3-4</span><span class="stat-unit">ans</span></div>
-        <div class="stat-label">Retour sur investissement</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number"><span>5</span><span class="stat-unit">MW</span></div>
-        <div class="stat-label">Puissance max installée</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number"><span>120</span><span class="stat-unit">+</span></div>
-        <div class="stat-label">Entreprises clientes</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTEURS -->
 <section class="section">
   <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Secteurs d'activité</div>
-      <h2 class="section-title">Nous intervenons dans tous les secteurs</h2>
-      <p class="section-subtitle">Quelle que soit votre activité, nous avons la solution énergétique adaptée à vos contraintes et objectifs.</p>
+    <div class="section-head">
+      <p class="eyebrow">Secteurs</p>
+      <h2 class="title">Une installation adaptée à votre activité</h2>
+      <p class="lead">Chaque secteur a ses contraintes : horaires, chaîne du froid, continuité de service. Nous dimensionnons en conséquence.</p>
     </div>
-    <div class="sector-grid stagger">
-      <div class="sector-card">
-        <div class="sector-icon">🏭</div>
-        <div class="sector-name">Industrie & Manufacture</div>
-        <p class="sector-desc">Usines, ateliers, zones industrielles. Solutions MW avec stockage massif et gestion intelligente de la demande.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🏨</div>
-        <div class="sector-name">Hôtellerie & Tourisme</div>
-        <p class="sector-desc">Hôtels, lodges, resorts. Énergie fiable 24h/24 pour améliorer l'expérience client et réduire les coûts.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🛒</div>
-        <div class="sector-name">Commerce & Distribution</div>
-        <p class="sector-desc">Supermarchés, centres commerciaux. Climatisation, éclairage et réfrigération alimentés par l'énergie solaire.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🏥</div>
-        <div class="sector-name">Santé & Pharmaceutique</div>
-        <p class="sector-desc">Hôpitaux, cliniques, pharmacies. Énergie ininterrompue critique pour la chaîne du froid et les équipements médicaux.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🌾</div>
-        <div class="sector-name">Agriculture & Agro-industrie</div>
-        <p class="sector-desc">Pompage solaire, séchage, transformation. Réduisez les coûts agricoles et améliorez la productivité.</p>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🏫</div>
-        <div class="sector-name">Éducation & Institutions</div>
-        <p class="sector-desc">Universités, écoles, mairies. Solutions durables pour réduire les budgets énergétiques publics.</p>
-      </div>
+    <div class="items">
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /> <path d="M17 18h1" /> <path d="M12 18h1" /> <path d="M7 18h1" /></svg><h3>Industrie</h3><p>Usines, ateliers et zones industrielles, avec stockage et gestion de la demande.</p></div>
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22v-6.57" /> <path d="M12 11h.01" /> <path d="M12 7h.01" /> <path d="M14 15.43V22" /> <path d="M15 16a5 5 0 0 0-6 0" /> <path d="M16 11h.01" /> <path d="M16 7h.01" /> <path d="M8 11h.01" /> <path d="M8 7h.01" /> <rect x="4" y="2" width="16" height="20" rx="2" /></svg><h3>Hôtellerie et tourisme</h3><p>Hôtels, lodges et résidences, alimentés 24 h sur 24.</p></div>
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1" /> <circle cx="19" cy="21" r="1" /> <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg><h3>Commerce et distribution</h3><p>Supermarchés et centres commerciaux : climatisation, éclairage et réfrigération.</p></div>
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v4" /> <path d="M14 14h-4" /> <path d="M14 18h-4" /> <path d="M14 8h-4" /> <path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" /> <path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" /></svg><h3>Santé et pharmacie</h3><p>Hôpitaux, cliniques et pharmacies, pour la chaîne du froid et les équipements médicaux.</p></div>
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22 16 8" /> <path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" /> <path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" /> <path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" /> <path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z" /> <path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" /> <path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" /> <path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" /></svg><h3>Agriculture et agro-industrie</h3><p>Pompage solaire, séchage et transformation.</p></div>
+      <div class="item"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 22v-4a2 2 0 1 0-4 0v4" /> <path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10" /> <path d="M18 5v17" /> <path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6" /> <path d="M6 5v17" /> <circle cx="12" cy="9" r="2" /></svg><h3>Éducation et institutions</h3><p>Universités, écoles et mairies, pour alléger les budgets énergétiques publics.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTIONS PRO -->
-<section class="section section-light" id="solutions-pro">
+<section class="section section-alt" id="solutions">
   <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Nos Solutions</div>
-      <h2 class="section-title">3 niveaux de solutions professionnelles</h2>
-      <p class="section-subtitle">Des installations modulaires et évolutives, du site de 20 kWc au parc solaire multi-mégawatts.</p>
+    <div class="section-head">
+      <p class="eyebrow">Solutions</p>
+      <h2 class="title">Trois échelles de projet</h2>
+      <p class="lead">Des installations modulaires et évolutives, du site de 20 kWc à la centrale de plusieurs mégawatts.</p>
     </div>
-    <div class="pro-pricing-grid fade-up">
-      <div class="pricing-card">
-        <div class="pricing-name">PME & Commerces</div>
-        <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">20 kWc — 100 kWc</div>
-        <div class="pricing-price-amount" style="font-size:32px;color:var(--text-primary);">Sur devis</div>
-        <div class="pricing-period">Étude gratuite incluse</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Audit énergétique complet</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Conception sur mesure</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Panneaux 500-600W classe A</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs string ou micro</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Stockage en option</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Monitoring SCADA</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Installation & raccordement</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Garantie 10 ans</div>
-        </div>
-        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Demander un audit →</a>
-      </div>
-
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Solutions les plus demandées</div>
-        <div class="pricing-name">ETI & Industries</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;">100 kWc — 1 MWc</div>
-        <div class="pricing-price-amount" style="font-size:32px;color:white;">Sur devis</div>
-        <div class="pricing-period">ROI garanti en contrat</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Étude de faisabilité détaillée</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Ingénierie EPC complète</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Panneaux bifaciaux 600W+</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs centraux Huawei/SMA</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Stockage BESS intégré</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>SCADA & monitoring avancé</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Gestion de projet dédiée</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Maintenance O&M 3 ans</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Rapport performance mensuel</div>
-        </div>
-        <a href="contact.html" class="btn btn-gold w-full btn-lg" style="justify-content:center;">Demander un audit →</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-name">Grands Comptes & Parcs</div>
-        <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">1 MWc — 10 MWc+</div>
-        <div class="pricing-price-amount" style="font-size:32px;color:var(--text-primary);">Sur devis</div>
-        <div class="pricing-period">Financement bancaire disponible</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-features">
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Étude de marché & business plan</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Conception EPC complète</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Modules bifaciaux & trackers</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Onduleurs centraux</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>BESS grande capacité</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Raccordement réseau HTA</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Équipe dédiée sur site</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Contrat O&M 5 ans</div>
-          <div class="pricing-feature"><div class="pricing-check">✓</div>Assurance performance</div>
-        </div>
-        <a href="contact.html" class="btn btn-outline-green w-full" style="justify-content:center;">Contacter nos experts →</a>
-      </div>
+    <div class="plans">
+      <article class="plan">
+        <div class="plan-name">PME et commerces</div>
+        <div class="plan-range">20 – 100 kWc</div>
+        <div class="plan-price"><span class="plan-quote">Sur devis</span><p class="plan-note">Étude gratuite incluse</p></div>
+        <ul class="checks">
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Audit énergétique complet</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Conception sur mesure</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Panneaux de 500 à 600 W</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Onduleurs string ou micro-onduleurs</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Stockage en option</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Supervision SCADA</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Installation et raccordement</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Garantie 10 ans</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-block">Demander un audit</a>
+      </article>
+      <article class="plan">
+        <div class="plan-name">ETI et industries</div>
+        <div class="plan-range">100 kWc – 1 MWc</div>
+        <div class="plan-price"><span class="plan-quote">Sur devis</span><p class="plan-note">Retour sur investissement garanti au contrat</p></div>
+        <ul class="checks">
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Étude de faisabilité détaillée</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Ingénierie EPC complète</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Panneaux bifaciaux de 600 W et plus</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Onduleurs centraux Huawei ou SMA</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Stockage BESS intégré</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Supervision SCADA avancée</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Chef de projet dédié</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Maintenance O&amp;M 3 ans</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Rapport de performance mensuel</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary btn-block">Demander un audit</a>
+      </article>
+      <article class="plan">
+        <div class="plan-name">Grands comptes et centrales</div>
+        <div class="plan-range">1 – 10 MWc et plus</div>
+        <div class="plan-price"><span class="plan-quote">Sur devis</span><p class="plan-note">Financement bancaire possible</p></div>
+        <ul class="checks">
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Étude de marché et plan d'affaires</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Conception EPC complète</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Modules bifaciaux et trackers</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Onduleurs centraux</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Stockage BESS grande capacité</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Raccordement au réseau HTA</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Équipe dédiée sur site</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Contrat O&amp;M 5 ans</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Assurance de performance</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-block">Contacter un ingénieur</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- AVANTAGES STRIP -->
 <section class="section">
   <div class="container">
-    <div class="advantage-strip fade-up">
-      <div class="adv-strip-item">
-        <div class="adv-strip-icon">🎯</div>
-        <div class="adv-strip-title">Audit gratuit</div>
-        <p class="adv-strip-text">Étude de faisabilité et simulation de ROI sans engagement</p>
-      </div>
-      <div class="adv-strip-item">
-        <div class="adv-strip-icon">⚙️</div>
-        <div class="adv-strip-title">Clé en main EPC</div>
-        <p class="adv-strip-text">Engineering, Procurement & Construction. On gère tout.</p>
-      </div>
-      <div class="adv-strip-item">
-        <div class="adv-strip-icon">📊</div>
-        <div class="adv-strip-title">ROI garanti</div>
-        <p class="adv-strip-text">Contrats de performance avec garanties sur la production</p>
-      </div>
-      <div class="adv-strip-item">
-        <div class="adv-strip-icon">🛡️</div>
-        <div class="adv-strip-title">O&M longue durée</div>
-        <p class="adv-strip-text">Contrats de maintenance pluriannuels pour une performance optimale</p>
+    <div class="section-head">
+      <p class="eyebrow">Notre engagement</p>
+      <h2 class="title">Un partenaire du premier audit à l'exploitation</h2>
+    </div>
+    <div class="features">
+      <div class="feature"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></svg><h3>Audit gratuit</h3><p>Étude de faisabilité et simulation du retour sur investissement, sans engagement.</p></div>
+      <div class="feature"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" /> <path d="M14 6a6 6 0 0 1 6 6v3" /> <path d="M4 15v-3a6 6 0 0 1 6-6" /> <rect x="2" y="15" width="20" height="4" rx="1" /></svg><h3>Clé en main EPC</h3><p>Ingénierie, achats et construction : nous gérons l'ensemble du chantier.</p></div>
+      <div class="feature"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="m9 15 2 2 4-4" /></svg><h3>Contrat de performance</h3><p>Des garanties de production inscrites au contrat, et une maintenance pluriannuelle pour les tenir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container split-even">
+    <div>
+      <p class="eyebrow">Simulation</p>
+      <h2 class="title">Votre retour sur investissement, chiffré avant de signer</h2>
+      <p class="lead">Nos ingénieurs simulent votre projet : production attendue, économies annuelles, retour sur investissement et plan de financement. Gratuit et sans engagement.</p>
+      <ol class="numbered" style="margin-top:32px">
+        <li><span class="step-num">01</span><div><h3>Analyse de votre consommation</h3><p>Étude de vos factures et de votre courbe de charge pour un dimensionnement juste.</p></div></li>
+        <li><span class="step-num">02</span><div><h3>Simulation financière sur 25 ans</h3><p>Flux de trésorerie, TRI, VAN et plan de financement adapté à votre structure.</p></div></li>
+        <li><span class="step-num">03</span><div><h3>Rapport d'ingénierie</h3><p>Plan d'implantation, schéma unifilaire et spécifications techniques complètes.</p></div></li>
+      </ol>
+      <div class="actions"><a href="contact.html" class="btn btn-primary btn-lg">Demander mon audit gratuit</a></div>
+    </div>
+    <div class="sim">
+      <div class="sim-head">Exemple de simulation <span>centrale de 200 kWc</span></div>
+      <dl class="kv">
+        <div><dt>Puissance installée</dt><dd>200 kWc</dd></div>
+        <div><dt>Production annuelle</dt><dd>290 000 kWh</dd></div>
+        <div><dt>Investissement</dt><dd>2 400 000 000 GNF</dd></div>
+        <div><dt>Économie annuelle</dt><dd>675 000 000 GNF</dd></div>
+      </dl>
+      <div class="sim-result"><span>Retour sur investissement estimé</span><span class="num">3,6 ans</span></div>
+      <div class="payback" aria-label="Sur 25 ans, l'investissement est remboursé pendant la quatrième année ; les années suivantes sont un gain net">
+        <div class="payback-bar">
+          <span class="paid"></span><span class="paid"></span><span class="paid"></span><span class="paid"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span><span class="gain"></span>
+        </div>
+        <div class="payback-legend"><span>an 1 · remboursé pendant l'an 4</span><span>an 25</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
-<section class="section section-light">
-  <div class="container">
-    <div class="section-header centered fade-up">
-      <div class="section-label">Réalisations</div>
-      <h2 class="section-title">Projets emblématiques</h2>
-    </div>
-    <div class="case-study-grid stagger">
-      <div class="case-study-card">
-        <div class="cs-label">Industrie · 2023</div>
-        <h3 class="cs-title">Usine Textile Konaté Industries</h3>
-        <p class="cs-description">Installation d'une centrale solaire de 500 kWc avec stockage BESS 400 kWh sur le toit de l'usine. Le projet a permis de réduire les coûts énergétiques de 65% et d'éliminer complètement les coupures de production.</p>
-        <div class="cs-stats">
-          <div>
-            <div class="cs-stat-number">65%</div>
-            <div class="cs-stat-label">Réduction coûts</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">500 kWc</div>
-            <div class="cs-stat-label">Puissance installée</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">3.5 ans</div>
-            <div class="cs-stat-label">ROI estimé</div>
-          </div>
-        </div>
-      </div>
-      <div class="case-study-card">
-        <div class="cs-label">Hôtellerie · 2023</div>
-        <h3 class="cs-title">Hôtel Grand Sahel — 4 étoiles</h3>
-        <p class="cs-description">Installation de 320 kWc pour alimenter la climatisation, l'éclairage et la piscine d'un hôtel 4 étoiles. Réduction de la facture énergétique de 70% et amélioration du bilan carbone de l'établissement.</p>
-        <div class="cs-stats">
-          <div>
-            <div class="cs-stat-number">70%</div>
-            <div class="cs-stat-label">Économie annuelle</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">320 kWc</div>
-            <div class="cs-stat-label">Puissance installée</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">4 ans</div>
-            <div class="cs-stat-label">ROI estimé</div>
-          </div>
-        </div>
-      </div>
-      <div class="case-study-card">
-        <div class="cs-label">Commerce · 2022</div>
-        <h3 class="cs-title">Supermarché Diallo & Fils</h3>
-        <p class="cs-description">Kit professionnel 150 kWc pour un supermarché avec chaîne du froid critique. La solution hybride garantit la continuité de service même lors des coupures du réseau national.</p>
-        <div class="cs-stats">
-          <div>
-            <div class="cs-stat-number">55%</div>
-            <div class="cs-stat-label">Réduction facture</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">150 kWc</div>
-            <div class="cs-stat-label">Puissance installée</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">4.5 ans</div>
-            <div class="cs-stat-label">ROI estimé</div>
-          </div>
-        </div>
-      </div>
-      <div class="case-study-card">
-        <div class="cs-label">Éducation · 2022</div>
-        <h3 class="cs-title">Campus Universitaire de l'Ouest</h3>
-        <p class="cs-description">Parc solaire de 1.2 MWc alimentant un campus universitaire de 8000 étudiants. Projet pilote en partenariat public-privé. 80% des besoins énergétiques couverts par l'énergie solaire.</p>
-        <div class="cs-stats">
-          <div>
-            <div class="cs-stat-number">80%</div>
-            <div class="cs-stat-label">Besoins couverts</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">1.2 MWc</div>
-            <div class="cs-stat-label">Puissance installée</div>
-          </div>
-          <div>
-            <div class="cs-stat-number">5 ans</div>
-            <div class="cs-stat-label">ROI estimé</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROI CALCULATOR CTA -->
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;" class="fade-up">
+    <div class="cta">
       <div>
-        <div class="section-label">Simulation ROI</div>
-        <h2 class="section-title">Calculez votre retour sur investissement</h2>
-        <p style="font-size:16px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;">Nos ingénieurs réalisent une simulation complète de votre projet solaire : production attendue, économies annuelles, ROI et plan de financement. Gratuit et sans engagement.</p>
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:36px;">
-          <div class="feature-item">
-            <div class="feature-icon">📊</div>
-            <div class="feature-content">
-              <h4>Analyse de votre consommation</h4>
-              <p>Étude de vos factures et de votre courbe de charge pour un dimensionnement optimal.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon gold">💹</div>
-            <div class="feature-content">
-              <h4>Simulation financière sur 25 ans</h4>
-              <p>Cash flows, TRI, VAN et plan de financement adapté à votre structure.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">📋</div>
-            <div class="feature-content">
-              <h4>Rapport d'ingénierie détaillé</h4>
-              <p>Plan d'implantation, single-line diagram, spécifications techniques complètes.</p>
-            </div>
-          </div>
-        </div>
-        <a href="contact.html" class="btn btn-primary btn-lg">Demander mon audit gratuit →</a>
+        <h2>Parlons de la consommation de votre site</h2>
+        <p>Nos ingénieurs vous proposent une consultation gratuite, avec une réponse sous 24 heures.</p>
       </div>
-      <div style="background:var(--bg-light);border-radius:var(--radius-xl);padding:40px;">
-        <div style="font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:24px;">📊 Exemple de simulation</div>
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
-            <span style="color:var(--text-muted);font-size:14px;">Puissance installée</span>
-            <span style="font-weight:700;color:var(--text-primary);">200 kWc</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
-            <span style="color:var(--text-muted);font-size:14px;">Production annuelle</span>
-            <span style="font-weight:700;color:var(--text-primary);">290 000 kWh</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
-            <span style="color:var(--text-muted);font-size:14px;">Économie annuelle</span>
-            <span style="font-weight:700;color:var(--accent-green);">675 000 000 GNF</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:14px 18px;background:white;border-radius:var(--radius-md);">
-            <span style="color:var(--text-muted);font-size:14px;">Investissement</span>
-            <span style="font-weight:700;color:var(--text-primary);">2 400 000 000 GNF</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:16px 18px;background:var(--accent-green);border-radius:var(--radius-md);">
-            <span style="color:white;font-size:14px;font-weight:600;">ROI estimé</span>
-            <span style="font-weight:800;color:white;font-size:18px;">3.5 ans</span>
-          </div>
-        </div>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-light btn-lg">Demander un audit</a>
+        <a href="kits-residentiels.html" class="btn btn-ghost-dark btn-lg">Solutions résidentielles</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-block fade-up">
-      <h2 class="cta-title">Prêt à transformer votre entreprise<br>avec l'énergie solaire ?</h2>
-      <p class="cta-subtitle">Nos experts industriels sont disponibles pour une consultation gratuite. Réponse sous 24 heures.</p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold btn-lg">Audit gratuit →</a>
-        <a href="kits-residentiels.html" class="btn btn-outline btn-lg">Solutions résidentielles</a>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-icon">☀️</div>
-          <div><div class="footer-logo-name">Innovea Group</div><div class="footer-logo-sub">Énergie Renouvelable</div></div>
-        </div>
-        <p class="footer-tagline">Votre partenaire de confiance pour des solutions énergétiques durables depuis 2012.</p>
-        <div class="footer-social"><a href="#" class="social-btn">📘</a><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">💼</a></div>
+        <a href="index.html" class="brand"><img src="img/logo-ig.png" alt="" width="32" height="32"><span>Innovea Group</span></a>
+        <p>Panneaux solaires, batteries et kits clés en main, conçus et installés depuis Conakry.</p>
       </div>
       <div>
-        <div class="footer-col-title">Produits</div>
-        <div class="footer-links">
-          <a href="panneaux-solaires.html" class="footer-link">→ Panneaux Solaires</a>
-          <a href="batteries.html" class="footer-link">→ Batteries de Stockage</a>
-          <a href="kits-residentiels.html" class="footer-link">→ Kits Résidentiels</a>
-          <a href="kits-professionnels.html" class="footer-link">→ Kits Professionnels</a>
-        </div>
+        <div class="footer-title">Produits</div>
+        <ul class="footer-links">
+          <li><a href="panneaux-solaires.html">Panneaux solaires</a></li>
+          <li><a href="batteries.html">Batteries de stockage</a></li>
+          <li><a href="kits-residentiels.html">Kits résidentiels</a></li>
+          <li><a href="kits-professionnels.html">Kits professionnels</a></li>
+        </ul>
       </div>
       <div>
-        <div class="footer-col-title">Entreprise</div>
-        <div class="footer-links">
-          <a href="a-propos.html" class="footer-link">→ À Propos</a>
-          <a href="contact.html" class="footer-link">→ Contact</a>
-        </div>
+        <div class="footer-title">Entreprise</div>
+        <ul class="footer-links">
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
       <div>
-        <div class="footer-col-title">Contact</div>
-        <div class="footer-links">
-          <div class="footer-link">📍 Conakry, Guinée</div>
-          <div class="footer-link">📞 +224 XXX XXX XXX</div>
-          <div class="footer-link">✉️ contact@innoveagroup.com</div>
-        </div>
+        <div class="footer-title">Contact</div>
+        <ul class="footer-links">
+          <li>Taouyah, Conakry, Guinée</li>
+          <li><a href="mailto:contact@innoveagroup.com">contact@innoveagroup.com</a></li>
+          <li>Lun–ven, 8 h–18 h</li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2024 Innovea Group. Tous droits réservés.</div>
-      <div class="footer-bottom-links">
-        <a href="#" class="footer-bottom-link">Mentions légales</a>
-        <a href="#" class="footer-bottom-link">Confidentialité</a>
-      </div>
+      <span>© 2026 Innovea Group</span>
+      <nav aria-label="Informations légales">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">CGV</a>
+      </nav>
     </div>
   </div>
 </footer>
